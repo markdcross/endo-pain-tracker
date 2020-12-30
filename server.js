@@ -14,7 +14,7 @@ app.get('/', (req, res) => res.send({ msg: `Welcome to Amy's pain tracker` }));
 // Define Routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
-// app.use('/api/entries', require('./routes/entries'));
+app.use('/api/entries', require('./routes/entries'));
 
 const PORT = process.env.PORT || 6000;
 
