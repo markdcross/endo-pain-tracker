@@ -1,0 +1,32 @@
+{
+  "name": "endo-pain-tracker",
+  "version": "1.0.0",
+  "description": "A simple React tracker for endometriosis pain and its contributing factors",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markdcross/endo-pain-tracker.git"
+  },
+  "author": "Mark Cross",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markdcross/endo-pain-tracker/issues"
+  },
+  "homepage": "https://github.com/markdcross/endo-pain-tracker#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.9"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
