@@ -91,10 +91,11 @@ router.put('/:id', auth, async (req, res) => {
     painScale
   } = req.body;
 
-  //TODO Split and trim meals
   // Build contact object
   const entryFields = {};
   if (date) entryFields.date = date;
+  // TODO Split and trim meals
+  // TODO Update meals array (push into array)
   if (meals) entryFields.meals = meals;
   if (stretch) entryFields.stretch = stretch;
   if (bowel) entryFields.bowel = bowel;
@@ -125,11 +126,6 @@ router.put('/:id', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
-// TODO Update meals array (push into array)
-// TODO Update bowel (button to toggle boolean)
-// TODO Update stretches (button to toggle boolean)
-// TODO Update pain (button to toggle boolean. If true, show painLocation and painScale)
 
 //* ============================
 //* DELETE
