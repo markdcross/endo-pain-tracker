@@ -1,4 +1,6 @@
+.env
 default.json
+/client/build
 
 # Logs
 logs
@@ -73,6 +75,10 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
