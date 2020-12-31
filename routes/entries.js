@@ -6,8 +6,11 @@ const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
 const Entry = require('../models/Entry');
 
+//* ============================
+//* GET
+//* ============================
 // @route   Get api/entries
-// @desc    Get all users entries
+// @desc    Get all entries for user
 // @access  Private
 router.get('/', auth, async (req, res) => {
   try {
@@ -21,6 +24,13 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
+// TODO GET entry for date
+// TODO GET entries for pain: true (-1 day?)
+// TODO GET entries for bowel: false (-1 day?)
+
+//* ============================
+//* POST
+//* ============================
 // @route   POST api/entries
 // @desc    Add new entry
 // @access  Private
@@ -63,7 +73,10 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// @route   PUT api/contacts/:id
+//* ============================
+//* PUT
+//* ============================
+// @route   PUT api/entries/:id
 // @desc    Update contact
 // @access  Private
 router.put('/:id', auth, async (req, res) => {
@@ -78,6 +91,7 @@ router.put('/:id', auth, async (req, res) => {
     painScale
   } = req.body;
 
+  //TODO Split and trim meals
   // Build contact object
   const entryFields = {};
   if (date) entryFields.date = date;
@@ -112,6 +126,14 @@ router.put('/:id', auth, async (req, res) => {
   }
 });
 
+// TODO Update meals array (push into array)
+// TODO Update bowel (button to toggle boolean)
+// TODO Update stretches (button to toggle boolean)
+// TODO Update pain (button to toggle boolean. If true, show painLocation and painScale)
+
+//* ============================
+//* DELETE
+//* ============================
 // @route   DELETE api/contacts
 // @desc    Delete contact
 // @access  Private

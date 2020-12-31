@@ -18,6 +18,7 @@ const UserSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   }
+  // TODO add profile fields like upcoming dr appts
 });
 
 module.exports = mongoose.model('user', UserSchema);

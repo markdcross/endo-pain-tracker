@@ -7,6 +7,12 @@ const { check, validationResult } = require('express-validator');
 
 const User = require('../models/User');
 
+//* ============================
+//* GET
+//* ============================
+//* ============================
+//* POST
+//* ============================
 // @route   POST api/users
 // @desc    Register a user
 // @access  Public
@@ -72,5 +78,12 @@ router.post(
     }
   }
 );
+
+//* ============================
+//* PUT
+//* ============================
+//* ============================
+//* DELETE
+//* ============================
 
 module.exports = router;
