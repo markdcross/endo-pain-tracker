@@ -44,7 +44,7 @@ router.post('/', auth, async (req, res) => {
   try {
     const newEntry = new Entry({
       date,
-      meals,
+      meals: meals.split(',').map(meal => meal.trim()),
       stretch,
       bowel,
       cycle,
@@ -81,7 +81,7 @@ router.put('/:id', auth, async (req, res) => {
   // Build contact object
   const entryFields = {};
   if (date) entryFields.date = date;
-  if (meal) entryFields.meals = meals;
+  if (meals) entryFields.meals = meals;
   if (stretch) entryFields.stretch = stretch;
   if (bowel) entryFields.bowel = bowel;
   if (cycle) entryFields.cycle = cycle;
@@ -99,7 +99,7 @@ router.put('/:id', auth, async (req, res) => {
       return res.status(401).json({ msg: 'Not authorized' });
     }
 
-    contact = await Entry.findByIdAndUpdate(
+    entry = await Entry.findByIdAndUpdate(
       req.params.id,
       { $set: entryFields },
       { new: true }
