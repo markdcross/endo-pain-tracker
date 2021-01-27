@@ -54,6 +54,7 @@ router.post('/', auth, async (req, res) => {
   try {
     const newEntry = new Entry({
       date,
+      // move the split up to the destructuring and use spread operator?
       meals: meals.split(',').map(meal => meal.trim()),
       stretch,
       bowel,

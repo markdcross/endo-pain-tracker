@@ -9,6 +9,7 @@ const EntrySchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  // TODO Update meals so that it's easier to manipulate
   meals: [String],
   stretch: {
     type: Boolean,
